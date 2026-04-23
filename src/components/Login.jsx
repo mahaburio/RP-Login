@@ -125,22 +125,30 @@ export default function Login({
         </div>
 
         {/* Text Block */}
-        <div className="text-container">
-          <h2 className="title">Staff Schedule</h2>
-          <p className="subtitle">Enter your PIN to continue</p>
+        <div className={`text-container${showManager ? " manager-mode" : ""}`}>
+          <h2 className="title">
+            {showManager ? "Manager Login" : "Staff Schedule"}
+          </h2>
+          <p className="subtitle">
+            {showManager
+              ? "Enter your password to continue"
+              : "Enter your PIN to continue"}
+          </p>
         </div>
 
-        {/* PIN Dots */}
-        <div className={`pin-input${shake ? " shake" : ""}`}>
-          {Array.from({ length: MAX_PIN_LENGTH }, (_, i) => (
-            <div
-              key={i}
-              className={`pin-dot${
-                i < pin.length ? " filled" : ""
-              }${pinError ? " error" : ""}`}
-            />
-          ))}
-        </div>
+        {/* PIN Dots — hidden in manager mode */}
+        {!showManager && (
+          <div className={`pin-input${shake ? " shake" : ""}`}>
+            {Array.from({ length: MAX_PIN_LENGTH }, (_, i) => (
+              <div
+                key={i}
+                className={`pin-dot${
+                  i < pin.length ? " filled" : ""
+                }${pinError ? " error" : ""}`}
+              />
+            ))}
+          </div>
+        )}
 
         {/* Keypad or Manager Form */}
         {!showManager ? (
