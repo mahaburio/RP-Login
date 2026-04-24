@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import bgImage from "../assets/steackhouse-background.webp";
+import bgImage from "../assets/wine-celler.webp";
 
 const MANAGER_PASSWORD = "RPrime2026";
 const MAX_PIN_LENGTH = 4;
