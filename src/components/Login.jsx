@@ -1,10 +1,10 @@
 import { useRef, useState } from "react";
 import bgImage from "../assets/wine-celler.webp";
 
-const MANAGER_PASSWORD = "RPrime2026";
+const MANAGER_PASSWORD = "RPrime";
 const MAX_PIN_LENGTH = 4;
 
-// Replace with Supabase employees data
+// Replace with Supabase data
 const MOCK_EMPLOYEES = [
   { id: 1, name: "John Doe", pin: "1234" },
   { id: 2, name: "Jane Smith", pin: "5678" },
